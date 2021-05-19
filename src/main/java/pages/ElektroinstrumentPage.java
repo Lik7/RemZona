@@ -25,14 +25,14 @@ public class ElektroinstrumentPage {
     }
 
     @Step("Нажать ссылку Шуруповерт")
-    public void clickScrewdriverLink(){
+    public void clickScrewdriverLink() {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(screwdriver));
         driver.findElement(screwdriver).click();
     }
 
     @Step("Отметить checkbox Makita")
-    public void clickСheckboxMakita(){
+    public void clickСheckboxMakita() {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(checkboxMakita));
         driver.findElement(checkboxMakita).click();
@@ -49,33 +49,36 @@ public class ElektroinstrumentPage {
     }
 
     @Step("Закрыть окно Корзина")
-    public void clickCloseCartBtn(){
+    public void clickCloseCartBtn() {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(closeCartBtn));
         driver.findElement(closeCartBtn).click();
     }
 
     @Step("Нажать Корзина")
-    public void clickBasket(){
+    public void clickBasket() {
         driver.findElement(basket).click();
     }
 
     @Step("Нажать кнопку удалить товар")
-    public void clickDeleteItemFromBasketBtn(){
+    public void clickDeleteItemFromBasketBtn() {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(deleteItemFromBasketBtn));
         driver.findElement(deleteItemFromBasketBtn).click();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.className("text-bigger")));
     }
 
+    //получить кол-во товаров в корзине
     public String getNumberOfGoodsFromBasket() {
         return driver.findElement(numberOfGoodsFromBasket).getText();
     }
 
+    //получить модель инструмента из прайс-листа
     public String getModelScrewdriverMakita() {
         return driver.findElement(By.cssSelector(".article-caption-title [href=\"/makita/td0101\"]")).getText();
     }
 
+    //получить модель инструмента из корзины
     public String getModelItemInBasketWindow() {
         return driver.findElement(By.cssSelector(".article-caption-title [href=\"/makita/td0101\"]")).getText();
     }

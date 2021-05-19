@@ -16,7 +16,7 @@ public class ToolsPage {
     }
 
     @Step("Нажать кнопку Электроинструмент")
-    public ElektroinstrumentPage clickElektroToolsBtn(){
+    public ElektroinstrumentPage clickElektroToolsBtn() {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".showcase-note [href=\"/tools-elektroinstrument\"]")));
         driver.findElement(elektroToolsBtn).click();
